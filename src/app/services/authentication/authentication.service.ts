@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import Api from '../api';
 import Token from '../../models/token';
-import Login from '../../models/login';
+import Login from '../../models/signIn';
 
 @Injectable({
   providedIn: 'root'
