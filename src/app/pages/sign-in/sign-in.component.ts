@@ -14,11 +14,28 @@ import SignIn from '../../models/signIn';
 export class SignInComponent implements OnInit {
 
   signInForm: FormGroup = this.formBuilder.group({
-    username: ['', [Validators.required, Validators.minLength(5)]],
-    password: ['', [Validators.required, Validators.minLength(5)]]
+    username: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5)
+      ]
+    ],
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5)
+      ]
+    ]
   });
 
-  signInData: SignIn = { username: '', password: '' };
+  signInData: SignIn = {
+    username: '',
+    password: ''
+  };
+
+  loading: boolean = false;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -31,7 +48,13 @@ export class SignInComponent implements OnInit {
 
   signIn() {
     if (this.signInForm.dirty && this.signInForm.valid) {
-      this.signInData = Object.assign({}, this.signInData, this.signInForm.value)
+      this.loading = true;
+
+      this.signInData = Object.assign(
+        {},
+        this.signInData,
+        this.signInForm.value
+        );
 
       this.authenticationService.postToken(this.signInData)
           .pipe(first())
@@ -39,9 +62,11 @@ export class SignInComponent implements OnInit {
               data => {
                 console.log(data);
                 this.router.navigate(['/sign-in']);
+                this.loading = false;
               },
               error => {
                 console.log(error);
+                this.loading = false;
               });
     }
   }
