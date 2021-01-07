@@ -1,27 +1,43 @@
 # JwtProtheusLogin
+> Autenticação JWT com backend TOTVS Protheus.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Este projeto foi construído com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
 
-## Development server
+## Setup do Projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [Angular CLI](https://github.com/angular/angular-cli): 11.0.5
+* [Node.js](https://github.com/nodejs/node): 14.13.1
+* [Angular](https://github.com/angular/angular): 11.0.5
+* [Bulma](https://github.com/jgthms/bulma): 0.9.1
 
-## Code scaffolding
+## Execução do Projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Após clonar o projeto, instale todas as dependencias executando o comando:
+
+```sh
+npm install
+```
+
+Em seguida execute:
+
+```sh
+ng serve
+```
+
+Navegue até o endereço:
+
+```sh
+http://localhost:4200
+```
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute `ng build` para fazer o build do projeto. Os artefatos do build vão ser armazenados no diretório `dist/`. Use a flag `--prod` para fazer o build em produção `ng build --prod`.
 
-## Running unit tests
+## Unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng test` para executar testes unitários via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## End-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute `ng e2e` para executar testes end-toend via [Protractor](http://www.protractortest.org/).
