@@ -35,15 +35,23 @@ export class SignInComponent implements OnInit {
     password: ''
   };
 
+  error: string = '';
+  returnUrl: string = '';
   loading: boolean = false;
 
   constructor(
     private authenticationService: AuthenticationService,
     private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
     private router: Router,
-  ) { }
+  ) {
+    if (this.authenticationService.currentUserValue.access_token) {
+      this.router.navigate(['/home']);
+    }
+  }
 
   ngOnInit(): void {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   signIn() {
@@ -60,12 +68,10 @@ export class SignInComponent implements OnInit {
           .pipe(first())
           .subscribe(
               data => {
-                console.log(data);
-                this.router.navigate(['/sign-in']);
-                this.loading = false;
+                this.router.navigate([this.returnUrl]);
               },
               error => {
-                console.log(error);
+                this.error = error;
                 this.loading = false;
               });
     }

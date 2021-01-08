@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { SignInComponent } from './sign-in/sign-in.component';
-import { AuthenticationService } from '../services/authentication/authentication.service';
 import { LoadingPageComponent } from '../components/loading-page/loading-page.component';
 import { SignInFormComponent } from '../components/sign-in-form/sign-in-form.component';
+
+import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
@@ -26,9 +26,6 @@ import { HomeComponent } from './home/home.component';
     SignInComponent,
     LoadingPageComponent,
     SignInFormComponent
-  ],
-  providers: [
-    AuthenticationService
   ]
 })
 export class PagesModule { }

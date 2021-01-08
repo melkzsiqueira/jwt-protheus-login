@@ -43,4 +43,8 @@ export class AuthenticationService {
         }));
   }
 
+  deleteToken(): void {
+    localStorage.removeItem('currentUser');
+    this.currentUserSubject.next({} as Token);
+  }
 }

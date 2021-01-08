@@ -32,7 +32,7 @@ http://localhost:4200
 
 ## Build
 
-Execute `ng build` para fazer o build do projeto. Os artefatos do build vão ser armazenados no diretório `dist/`. Use a flag `--prod` para fazer o build em produção `ng build --prod`.
+Execute `ng build` para fazer o build do projeto. Os artefatos do build vão ser armazenados no diretório `dist/`. Use a flag `--prod` para fazer o build em produção: `ng build --prod`.
 
 ## Unit tests
 
@@ -40,4 +40,4 @@ Execute `ng test` para executar testes unitários via [Karma](https://karma-runn
 
 ## End-to-end tests
 
-Execute `ng e2e` para executar testes end-toend via [Protractor](http://www.protractortest.org/).
+Execute `ng e2e` para executar testes end-to-end via [Protractor](http://www.protractortest.org/).
