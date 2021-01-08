@@ -9,18 +9,13 @@ import { ErrorInterceptor } from './interceptors/error/error.interceptor';
 import { TokenInterceptor } from './interceptors/token/token.interceptor';
 import { AuthenticationService } from '../app/services/authentication/authentication.service';
 
+import { NavbarComponent } from '../app/components/navbar/navbar.component';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    FooterComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

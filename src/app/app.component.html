@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<app-navbar *ngIf="currentUser?.access_token"></app-navbar>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

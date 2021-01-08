@@ -1,1 +1,33 @@
-<p>navbar works!</p>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" [routerLink]="['/home']">
+        Home
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light" (click)="logOut()">
+            LogOut
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="pageloader" [ngClass]="{ 'is-active': loading }"><span class="title">Saindo...</span></div>
