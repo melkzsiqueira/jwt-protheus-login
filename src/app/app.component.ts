@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { AuthenticationService } from './services/authentication/authentication.service';
 import Token from './models/token'
@@ -14,7 +13,6 @@ export class AppComponent {
   currentUser?: Token;
 
   constructor(
-    private router: Router,
     private authenticationService: AuthenticationService
   ) {
     this.authenticationService.currentUser.subscribe(data => this.currentUser = data);

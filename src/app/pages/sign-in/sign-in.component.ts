@@ -45,7 +45,8 @@ export class SignInComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
   ) {
-    if (this.authenticationService.currentUserValue.access_token) {
+    if (this.authenticationService.currentUserValue.access_token &&
+      this.authenticationService.isSignIn) {
       this.router.navigate(['/home']);
     }
   }

@@ -16,10 +16,11 @@ export class AuthenticationGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (this.authenticationService.currentUserValue.access_token) {
+      if (this.authenticationService.currentUserValue.access_token && this.authenticationService.isSignIn) {
         return true;
       }
 
+      this.authenticationService.deleteToken();
       this.router.navigate(['/sign-in']);
 
       return false;
