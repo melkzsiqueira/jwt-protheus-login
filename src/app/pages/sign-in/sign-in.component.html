@@ -3,7 +3,17 @@
     <form novalidate (ngSubmit)="signIn()" [formGroup]="signInForm">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
-          <input class="input" type="text" id="username" placeholder="Usuário" formControlName="username">
+          <input
+            class="input"
+            type="text"
+            id="username"
+            placeholder="Usuário"
+            formControlName="username"
+            [ngClass]="{ 'is-invalid': displayMessage.username }"
+          />
+          <span class="has-text-danger is-size-7" *ngIf="displayMessage.username">
+            <p [innerHTML]="displayMessage.username"></p>
+          </span>
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
@@ -13,7 +23,17 @@
       </div>
       <div class="field">
         <p class="control has-icons-left">
-          <input class="input" type="password" id="password" placeholder="Senha" formControlName="password">
+          <input
+            class="input"
+            type="password"
+            id="password"
+            placeholder="Senha"
+            formControlName="password"
+            [ngClass]="{ 'is-invalid': displayMessage.password }"
+          />
+          <span class="has-text-danger is-size-7" *ngIf="displayMessage.password">
+            <p [innerHTML]="displayMessage.password"></p>
+          </span>
           <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
           </span>

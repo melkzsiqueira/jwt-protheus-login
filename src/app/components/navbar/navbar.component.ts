@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logOut() {
+  logout() {
     this.loading = true;
 
     setTimeout(() => {
