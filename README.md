@@ -3,7 +3,7 @@
 
 Este projeto foi construído com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
 
-![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/104537373-9e3d4d00-55f8-11eb-89bc-a4c99a4f51dd.gif)
+![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/104537867-874b2a80-55f9-11eb-8afb-8394a7591e96.gif)
 
 ## Setup do Projeto
 
