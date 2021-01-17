@@ -1,7 +1,9 @@
 # JwtProtheusLogin
-> Autenticação JWT com backend TOTVS Protheus.
+> Autenticação JWT com backend Protheus.
 
 Este projeto foi construído com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
+
+![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/104537867-874b2a80-55f9-11eb-8afb-8394a7591e96.gif)
 
 ## Setup do Projeto
 
