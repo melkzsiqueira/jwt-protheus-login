@@ -16,7 +16,7 @@ Este projeto foi construído com [Angular CLI](https://github.com/angular/angula
 
 Para que a autenticação JWT com o Protheus funcione, é preciso ter o seu [ambiente REST configurado](https://tdn.totvs.com/pages/releaseview.action?pageId=519719292) no `appserver.ini`.
 
-Após [configurar seu ambiente REST](https://tdn.totvs.com/pages/releaseview.action?pageId=519719292), clone o projeto e altere a propriedade `baseURL` que está localizada dentro do arquivo `src/app/services/api.ts`, para o endereço e a porta do seu ambiente REST: `return 'http://localhost:8084/rest'`.
+Após [configurar seu ambiente REST](https://tdn.totvs.com/pages/releaseview.action?pageId=519719292), clone o projeto e altere a propriedade `baseURL` que está localizada dentro do arquivo `src/app/services/api.ts`, para o endereço e a porta do seu ambiente REST: `'http://localhost:8084/rest'`.
 
 ## Execução do Projeto
 
