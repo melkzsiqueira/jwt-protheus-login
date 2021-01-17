@@ -3,7 +3,7 @@
 
 Este projeto foi construído com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
 
-![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/104537867-874b2a80-55f9-11eb-8afb-8394a7591e96.gif)
+![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/104857105-05a71580-58f5-11eb-9ce8-522fbbc2837b.gif)
 
 ## Setup do Projeto
 
@@ -11,6 +11,12 @@ Este projeto foi construído com [Angular CLI](https://github.com/angular/angula
 * [Node.js](https://github.com/nodejs/node): 14.13.1
 * [Angular](https://github.com/angular/angular): 11.0.5
 * [Bulma](https://github.com/jgthms/bulma): 0.9.1
+
+## Pré-requisitos
+
+Para que a autenticação JWT com o Protheus funcione, é preciso ter o seu [ambiente REST configurado](https://tdn.totvs.com/pages/releaseview.action?pageId=519719292) no `appserver.ini`.
+
+Após [configurar seu ambiente REST](https://tdn.totvs.com/pages/releaseview.action?pageId=519719292), clone o projeto e altere a propriedade `baseURL` que está localizada dentro do arquivo `src/app/services/api.ts`, para o endereço e a porta do seu ambiente REST: `return 'http://localhost:8084/rest'`.
 
 ## Execução do Projeto
 
