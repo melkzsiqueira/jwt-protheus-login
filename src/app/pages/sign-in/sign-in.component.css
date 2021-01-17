@@ -9,7 +9,14 @@
 
 .box {
   width: 300px;
-
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-top-color: #00D1B2;
   background: #fff;
+}
+
+.logo {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
