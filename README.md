@@ -49,3 +49,9 @@ Execute `ng test` para executar testes unitários via [Karma](https://karma-runn
 ## End-to-end tests
 
 Execute `ng e2e` para executar testes end-to-end via [Protractor](http://www.protractortest.org/).
+
+## Referências
+
+* [Configuração do REST Protheus](https://tdn.totvs.com/pages/releaseview.action?pageId=519719292)
+* [JSON Web Token (JWT) Protheus](https://centraldeatendimento.totvs.com/hc/pt-br/articles/360044840733-MP-ADVPL-JSON-Web-Token-JWT-)
+* [JWT Authentication Example & Tutorial](https://jasonwatmore.com/post/2019/06/22/angular-8-jwt-authentication-example-tutorial)
