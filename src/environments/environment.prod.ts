@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: true,
+  services: {
+    api: {
+      baseURL: 'http://localhost:8087/rest'
+    }
+  }
 };

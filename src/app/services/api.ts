@@ -1,7 +1,9 @@
+import { environment } from '../../environments/environment';
+
 export default class Api {
 
     public static get baseURL(): string {
-      return 'http://localhost:8084/rest'
+      return environment.services.api.baseURL
     }
 
 }
