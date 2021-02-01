@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
@@ -9,6 +9,8 @@ import { GenericValidator } from '../../validations/generic-form.validations';
 import ValidationMessages from '../../models/validationMessages';
 import DisplayMessage from '../../models/displayMessage';
 import SignIn from '../../models/signIn';
+import Load from '../../models/loading';
+
 import { fromEvent, merge, Observable } from 'rxjs';
 
 @Component({
@@ -19,6 +21,9 @@ import { fromEvent, merge, Observable } from 'rxjs';
 export class SignInFormComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(FormControlName, { read: ElementRef }) formImputElements: ElementRef[];
+
+  @Output()
+  loading: EventEmitter<Load> = new EventEmitter();
 
   signInForm: FormGroup = this.formBuilder.group({
     username: [
@@ -44,7 +49,6 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
 
   error: string = '';
   returnUrl: string = '';
-  loading: boolean = false;
 
   validationMessages: ValidationMessages;
   genericValidator: GenericValidator;
@@ -85,7 +89,7 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
 
   signIn() {
     if (this.signInForm.dirty && this.signInForm.valid) {
-      this.loading = true;
+      this.loading.emit({ message: 'Entrando...', load: true });
 
       this.signInData = Object.assign(
         {},
@@ -101,7 +105,7 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
               },
               error => {
                 this.error = error;
-                this.loading = false;
+                this.loading.emit({ message: 'Entrando...', load: false });
               });
     }
   }

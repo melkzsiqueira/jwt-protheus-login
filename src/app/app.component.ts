@@ -11,6 +11,7 @@ import Token from './models/token'
 export class AppComponent {
   title: string = 'jwt-protheus-login';
   currentUser?: Token;
+  loading: boolean = false;
 
   constructor(
     private authenticationService: AuthenticationService

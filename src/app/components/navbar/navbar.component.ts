@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 
+import Load from '../../models/loading';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,8 @@ import { AuthenticationService } from '../../services/authentication/authenticat
 })
 export class NavbarComponent implements OnInit {
 
-  loading: boolean = false;
+  @Output()
+  loading: EventEmitter<Load> = new EventEmitter();
 
   constructor(
     private router: Router,
@@ -22,11 +24,12 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.loading = true;
+    this.loading.emit({ message: 'Saindo...', load: true });
 
     setTimeout(() => {
       this.authenticationService.deleteToken();
       this.router.navigate(['/sign-in']);
+      this.loading.emit({ message: 'Saindo...', load: false });
     }, 1000);
   }
 
