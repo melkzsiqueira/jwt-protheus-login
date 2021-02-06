@@ -1,15 +1,15 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { GenericValidator } from '../../validations/generic-form.validations';
+import { LoadSpinnerService } from '../../services/load-spinner/load-spinner.service';
 
 import ValidationMessages from '../../models/validationMessages';
 import DisplayMessage from '../../models/displayMessage';
 import SignIn from '../../models/signIn';
-import Load from '../../models/loading';
 
 import { fromEvent, merge, Observable } from 'rxjs';
 
@@ -21,9 +21,6 @@ import { fromEvent, merge, Observable } from 'rxjs';
 export class SignInFormComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(FormControlName, { read: ElementRef }) formImputElements: ElementRef[];
-
-  @Output()
-  loading: EventEmitter<Load> = new EventEmitter();
 
   signInForm: FormGroup = this.formBuilder.group({
     username: [
@@ -56,6 +53,7 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
 
   constructor(
     private authenticationService: AuthenticationService,
+    private loadSpinnerService: LoadSpinnerService,
     private formBuilder: FormBuilder,
     private router: Router,
   ) { 
@@ -87,9 +85,9 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
     });
   }
 
-  signIn() {
+  signIn(): void{
     if (this.signInForm.dirty && this.signInForm.valid) {
-      this.loading.emit({ message: 'Entrando...', load: true });
+      this.loadSpinnerService.active({ message: 'Entrando...' , load: true });
 
       this.signInData = Object.assign(
         {},
@@ -101,11 +99,12 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
           .pipe(first())
           .subscribe(
               data => {
+                this.loadSpinnerService.active({ load: false });
                 this.router.navigate([this.returnUrl]);
               },
               error => {
+                this.loadSpinnerService.active({ message: 'Entrando...' , load: false });
                 this.error = error;
-                this.loading.emit({ message: 'Entrando...', load: false });
               });
     }
   }

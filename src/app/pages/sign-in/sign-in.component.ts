@@ -10,7 +10,6 @@ import { AuthenticationService } from '../../services/authentication/authenticat
 })
 export class SignInComponent implements OnInit {
 
-  loading: boolean = false;
   returnUrl: string = '';
 
   constructor(

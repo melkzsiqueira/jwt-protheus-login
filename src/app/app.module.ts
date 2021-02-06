@@ -8,12 +8,15 @@ import { PagesModule } from './pages/pages.module';
 import { ErrorInterceptor } from './interceptors/error/error.interceptor';
 import { TokenInterceptor } from './interceptors/token/token.interceptor';
 import { AuthenticationService } from '../app/services/authentication/authentication.service';
+import { LoadSpinnerService } from './services/load-spinner/load-spinner.service';
 
+import { LoadSpinnerComponent } from './components/load-spinner/load-spinner.component';
 import { NavbarComponent } from '../app/components/navbar/navbar.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
+    LoadSpinnerComponent,
     AppComponent,
     NavbarComponent
   ],
@@ -26,7 +29,8 @@ import { AppComponent } from './app.component';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    AuthenticationService
+    AuthenticationService,
+    LoadSpinnerService
   ],
   bootstrap: [
     AppComponent

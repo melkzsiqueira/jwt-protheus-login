@@ -1,7 +1,7 @@
-<app-navbar *ngIf="currentUser?.access_token" (loading)="loading = $event"></app-navbar>
+<app-navbar *ngIf="currentUser?.access_token"></app-navbar>
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
 
-<app-loading-page [loading]="loading"></app-loading-page>
+<app-load-spinner></app-load-spinner>
