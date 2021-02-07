@@ -12,8 +12,7 @@ import LoadSpinner from '../../models/loadSpinner';
 
 export class LoadSpinnerComponent implements OnInit {
 
-  @Input()
-  isActive: LoadSpinner = { message: '', load: false };
+  isActive: LoadSpinner = { load: false };
 
   constructor(
     private loadSpinnerService: LoadSpinnerService

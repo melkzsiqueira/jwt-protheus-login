@@ -13,12 +13,14 @@ import { LoadSpinnerService } from './services/load-spinner/load-spinner.service
 import { LoadSpinnerComponent } from './components/load-spinner/load-spinner.component';
 import { NavbarComponent } from '../app/components/navbar/navbar.component';
 import { AppComponent } from './app.component';
+import { NotificationComponent } from './components/notification/notification.component';
 
 @NgModule({
   declarations: [
     LoadSpinnerComponent,
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

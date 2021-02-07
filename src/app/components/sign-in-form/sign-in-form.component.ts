@@ -1,17 +1,19 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { fromEvent, merge, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { GenericValidator } from '../../validations/generic-form.validations';
 import { LoadSpinnerService } from '../../services/load-spinner/load-spinner.service';
+import { NotificationService } from '../../services/notification/notification.service';
 
 import ValidationMessages from '../../models/validationMessages';
 import DisplayMessage from '../../models/displayMessage';
 import SignIn from '../../models/signIn';
 
-import { fromEvent, merge, Observable } from 'rxjs';
+import * as bulmaToast from 'bulma-toast'
 
 @Component({
   selector: 'app-sign-in-form',
@@ -44,7 +46,6 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
     password: ''
   };
 
-  error: string = '';
   returnUrl: string = '';
 
   validationMessages: ValidationMessages;
@@ -53,6 +54,7 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
 
   constructor(
     private authenticationService: AuthenticationService,
+    private notificationService: NotificationService,
     private loadSpinnerService: LoadSpinnerService,
     private formBuilder: FormBuilder,
     private router: Router,
@@ -104,7 +106,15 @@ export class SignInFormComponent implements OnInit, AfterViewInit {
               },
               error => {
                 this.loadSpinnerService.active({ message: 'Entrando...' , load: false });
-                this.error = error;
+
+                bulmaToast.toast({ 
+                  message: error,
+                  type: 'is-danger',
+                  dismissible: false,
+                  duration: 3000,
+                  position: "bottom-center",
+                  closeOnClick: true,
+                 });
               });
     }
   }

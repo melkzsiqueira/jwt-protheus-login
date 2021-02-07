@@ -12,7 +12,7 @@ export class LoadSpinnerService {
   public isActive: Observable<LoadSpinner>;
 
   constructor() { 
-    this.isActiveSubject = new BehaviorSubject<LoadSpinner>({ message: '', load: false });
+    this.isActiveSubject = new BehaviorSubject<LoadSpinner>({ load: false });
     this.isActive = this.isActiveSubject.asObservable();
    }
 
