@@ -8,7 +8,7 @@
 * [Angular CLI](https://github.com/angular/angular-cli): 11.0.5
 * [Node.js](https://github.com/nodejs/node): 14.13.1
 * [Angular](https://github.com/angular/angular): 11.0.5
-* [Bulma](https://github.com/jgthms/bulma): 0.9.1
+* [PO UI](https://github.com/po-ui/po-angular): 4.4.0
 
 ## Pré-requisitos
 
