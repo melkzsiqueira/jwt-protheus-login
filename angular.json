@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
               "src/styles.css",
               "node_modules/bulma/css/bulma.min.css",
               "node_modules/bulma-extensions/dist/css/bulma-extensions.min.css",
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@po-ui/style/css/po-theme-default.min.css",
               "src/styles.css",
               "node_modules/bulma/css/bulma.min.css",
               "node_modules/bulma-extensions/dist/css/bulma-extensions.min.css",

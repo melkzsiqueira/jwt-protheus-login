@@ -17,25 +17,30 @@ import { NotificationComponent } from './components/notification/notification.co
 
 @NgModule({
   declarations: [
-    LoadSpinnerComponent,
-    AppComponent,
-    NavbarComponent,
+    LoadSpinnerComponent, 
+    AppComponent, 
+    NavbarComponent, 
     NotificationComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    PagesModule
+    BrowserModule, 
+    HttpClientModule, 
+    AppRoutingModule, 
+    PagesModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: ErrorInterceptor, 
+      multi: true },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: TokenInterceptor, 
+      multi: true 
+    },
     AuthenticationService,
-    LoadSpinnerService
+    LoadSpinnerService,
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

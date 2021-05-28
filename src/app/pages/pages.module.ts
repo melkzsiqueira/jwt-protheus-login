@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PoModule } from '@po-ui/ng-components';
+import { PoTemplatesModule, PoPageLoginModule } from '@po-ui/ng-templates';
 
 import { SignInFormComponent } from '../components/sign-in-form/sign-in-form.component';
 
@@ -12,17 +14,20 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     SignInComponent,
     SignInFormComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PoModule,
+    PoTemplatesModule,
+    PoPageLoginModule,    
   ],
   exports: [
     SignInComponent,
-    SignInFormComponent
+    SignInFormComponent,
   ]
 })
 export class PagesModule { }
