@@ -6,7 +6,7 @@ import * as moment from "moment";
 
 import Api from '../api';
 import Token from '../../models/token';
-import Login from '../../models/signIn';
+import { PoPageLogin } from '@po-ui/ng-templates';
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +34,12 @@ export class AuthenticationService {
   ngOnInit(): void {
   }
 
-  // Requisição do Token no Protheus
-  postToken({ username, password }: Login): Observable<Token> {
-    const queryParams = '?grant_type=password&password='+username+'&username='+password;
+  postToken({ login, password }: PoPageLogin): Observable<Token> {
+    const queryParams = '?grant_type=password&password='+password+'&username='+login;
 
     return this.httpClient.post<Token>(
         Api.baseURL + `/api/oauth2/v1/token` + queryParams,
-        { username, password }
+        { login, password }
       ).pipe(map(token => {
           token.expires_in = moment().add(token.expires_in, 'seconds').unix();
 
