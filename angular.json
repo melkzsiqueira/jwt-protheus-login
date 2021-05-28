@@ -24,8 +24,13 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/assets",
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**\/*",
+                "input": "node_modules/@po-ui/style/images",
+                "output": "assets/images"
+              }
             ],
             "styles": [
               "./node_modules/@po-ui/style/css/po-theme-default.min.css",
@@ -91,8 +96,13 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
+              "src/assets",
               "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**\/*",
+                "input": "node_modules/@po-ui/style/images",
+                "output": "assets/images"
+              }
             ],
             "styles": [
               "./node_modules/@po-ui/style/css/po-theme-default.min.css",
