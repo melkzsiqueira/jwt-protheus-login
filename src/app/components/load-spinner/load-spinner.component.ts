@@ -8,7 +8,7 @@ import LoadSpinner from '../../models/loadSpinner';
   styleUrls: ['./load-spinner.component.css'],
 })
 export class LoadSpinnerComponent implements OnInit {
-  isActive: LoadSpinner = { load: false };
+  isActive: LoadSpinner = { message: 'Carregando...', load: false };
 
   constructor(private loadSpinnerService: LoadSpinnerService) {}
 

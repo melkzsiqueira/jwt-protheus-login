@@ -1,1 +1,5 @@
-<div class="pageloader" [ngClass]="{ 'is-active': isActive.load }"><span class="title">{{ isActive.message }}</span></div>
+<po-loading-overlay
+    *ngIf="isActive.load"
+    [p-text]="isActive.message" 
+>
+</po-loading-overlay>

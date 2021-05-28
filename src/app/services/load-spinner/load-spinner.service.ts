@@ -12,11 +12,11 @@ export class LoadSpinnerService {
   public isActive: Observable<LoadSpinner>;
 
   constructor() { 
-    this.isActiveSubject = new BehaviorSubject<LoadSpinner>({ load: false });
+    this.isActiveSubject = new BehaviorSubject<LoadSpinner>({ message: 'Carregando...', load: false });
     this.isActive = this.isActiveSubject.asObservable();
    }
 
-   active({ message, load }: LoadSpinner): void {
+   active(load: boolean, message: string = 'Carregando...'): void {
      this.isActiveSubject.next({
        message, 
        load

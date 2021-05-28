@@ -1,5 +1,5 @@
 export default interface LoadSpinner {
-    message?: string,
+    message: string,
     load: boolean
   }
   
