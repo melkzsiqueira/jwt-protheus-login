@@ -1,7 +1,7 @@
 # JwtProtheusLogin
 > Autenticação JWT com backend Protheus.
 
-![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/104857105-05a71580-58f5-11eb-9ce8-522fbbc2837b.gif)
+![jwtprotheuslogin](https://user-images.githubusercontent.com/18331586/120038726-17eb3b80-bfda-11eb-808b-60d84fcffe11.gif)
 
 ## Setup do Projeto
 
