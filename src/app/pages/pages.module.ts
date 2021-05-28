@@ -5,15 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PoModule } from '@po-ui/ng-components';
 import { PoTemplatesModule, PoPageLoginModule } from '@po-ui/ng-templates';
 
-import { SignInFormComponent } from '../components/sign-in-form/sign-in-form.component';
-
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     SignInComponent,
-    SignInFormComponent,
     HomeComponent,
   ],
   imports: [
@@ -27,7 +24,6 @@ import { HomeComponent } from './home/home.component';
   ],
   exports: [
     SignInComponent,
-    SignInFormComponent,
   ]
 })
 export class PagesModule { }
