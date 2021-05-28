@@ -1,9 +1,5 @@
 <app-navbar *ngIf="currentUser?.access_token"></app-navbar>
 
-<div class="container">
-  <router-outlet></router-outlet>
-
-  <app-notification></app-notification>
-</div>
+<router-outlet></router-outlet>
 
 <app-load-spinner></app-load-spinner>

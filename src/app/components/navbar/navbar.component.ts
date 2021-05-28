@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PoNavbarIconAction, PoNavbarItem } from '@po-ui/ng-components';
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { LoadSpinnerService } from '../../services/load-spinner/load-spinner.service';
 
@@ -9,6 +10,13 @@ import { LoadSpinnerService } from '../../services/load-spinner/load-spinner.ser
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  navbarItens: Array<PoNavbarItem> = [
+    { action: () => {}, label: 'Home', link: '/home' }
+  ]
+  iconActions: Array<PoNavbarIconAction> = [
+    { action: () => { this.logout() }, icon: 'po-icon-exit', label: 'Home' }
+  ]
+
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
@@ -17,13 +25,13 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  logout() {
-    this.loadSpinnerService.active({ message: 'Saindo...', load: true });
+  logout(): void  {
+    this.loadSpinnerService.active(true, 'Saindo...');
 
     setTimeout(() => {
       this.authenticationService.deleteToken();
       this.router.navigate(['/sign-in']);
-      this.loadSpinnerService.active({ load: false });
+      this.loadSpinnerService.active(false);
     }, 1000);
   }
 }

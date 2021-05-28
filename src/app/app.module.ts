@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { PoModule, PoLoadingModule, PoNavbarModule } from '@po-ui/ng-components';
 import { PagesModule } from './pages/pages.module';
 
 import { ErrorInterceptor } from './interceptors/error/error.interceptor';
@@ -24,9 +26,13 @@ import { NotificationComponent } from './components/notification/notification.co
   ],
   imports: [
     BrowserModule, 
+    BrowserAnimationsModule,
     HttpClientModule, 
     AppRoutingModule, 
     PagesModule,
+    PoLoadingModule,
+    PoNavbarModule,
+    PoModule    
   ],
   providers: [
     { 
